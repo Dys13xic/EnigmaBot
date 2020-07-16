@@ -4,13 +4,22 @@ import discord
 import subprocess
 import glob
 import shlex
+import sys
 
 EXIT_SUCCESS = 0
+EXIT_FAILURE = 1
 COMMAND_PREFIX = "!enigma "
 
 # Retrieve the discord bot token
-tokenFile = open("token.txt", 'r')
-token = tokenFile.readline()
+
+try:
+    tokenFile = open("token.txt", 'r')
+    token = tokenFile.readline()
+
+except:
+    print("ERROR: Unable to open/read token.txt")
+    sys.exit(EXIT_FAILURE)
+
 
 client = discord.Client()
 
@@ -27,7 +36,7 @@ async def run_program(cmd, messageObject):
         output = stderr
 
     # Send output to the message Object's channel
-    await messageObject.channel.send("```" + (output.decode("utf-8").strip("./")) + "```")
+    await messageObject.channel.send("```" + output.decode("utf-8") + "```")
 
 
 @client.event
@@ -44,7 +53,6 @@ async def on_guild_join(guild):
 
     for channel in guild.text_channels:
         if channel.permissions_for(guild.me).send_messages:
-
             await channel.send(welcomeMessage)
             break
 
@@ -71,4 +79,13 @@ async def on_message(message):
                
                 await run_program(args, message)
 
-client.run(token)
+try:
+    client.run(token)
+
+except discord.errors.LoginFailure:
+    print("ERROR: Invalid token specified in token.txt")
+    sys.exit(EXIT_FAILURE)
+
+except:
+    print("ERROR: Unable to connect to Discord API")
+    sys.exit(EXIT_FAILURE)

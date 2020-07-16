@@ -1,4 +1,6 @@
 *
 */
 !.gitignore
-!.bot.py
+!bot.py
+!token.txt
+!README.md

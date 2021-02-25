@@ -75,7 +75,7 @@ async def on_message(message):
                 print("Command received")
               
                 # Create a unix-like arguments list (ignoring the command prefix)
-                args = ["./enigma.out"] + shlex.split(message.content)[1:]
+                args = ["./enigma"] + shlex.split(message.content)[1:]
 
                 await message.delete()
                 await run_program(args, message)

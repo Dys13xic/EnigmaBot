@@ -1,4 +1,7 @@
 *
 */
 !.gitignore
-!.bot.py
+!bot.py
+!*.c
+!*.h
+!Makefile

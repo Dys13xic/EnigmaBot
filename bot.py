@@ -49,7 +49,8 @@ async def on_guild_join(guild):
     welcomeMessage = """Hello, I am ENIGMA. I simulate the function of a Wehrmacht ENIGMA I cipher machine.
 `-` My command prefix is `!enigma`
 `-` Run a command by private message or command prefix
-`-` To see usage and options information, type `!enigma -h`"""
+`-` To see usage and options information, type `!enigma -h`
+For more information visit https://github.com/Dys13xic/EnigmaBot"""
 
     for channel in guild.text_channels:
         if channel.permissions_for(guild.me).send_messages:

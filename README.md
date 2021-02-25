@@ -11,10 +11,28 @@ EnigmaBot brings the functionality of a Wehrmacht ENIGMA I cipher machine to you
 
 ### Procedure
 
-1. [Install Python 3](https://realpython.com/installing-python/)
-2. [Create a Discord bot](https://discordpy.readthedocs.io/en/latest/discord.html)
-3. Copy the token for your Discord bot into token.txt
-4. 
+1. Clone this repository to your machine
+
+        $ git clone https://github.com/Dys13xic/EnigmaBot
+
+2. Install GCC compiler
+
+        $ sudo apt install gcc
+
+3. Open a terminal within the repository folder, building using the make file
+
+        $ make
+
+2. [Install Python 3](https://www.python.org/downloads/)
+
+        $ sudo apt install python3
+
+3. [Install the discord.py library using pip](https://pypi.org/project/discord.py/)
+4. [Create a Discord bot](https://discordpy.readthedocs.io/en/latest/discord.html)
+5. Copy the token for your Discord bot into token.txt
+6. Open a terminal within the repository folder, run the bot
+            
+        $ python3 bot.py
 ---
 
 ## **Usage Information:**

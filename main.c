@@ -80,8 +80,8 @@ int main(int argc, char *argv[]) {
                 char **splitPositionArgument = splitArg(optarg, &size);
                 status = validateNumericSettings(splitPositionArgument, positionSettings, size);
 
-                if (status != S_SUCCESS);
-                    errorExit(status, "validateRotors()", programName, true);
+                if (status != S_SUCCESS)
+                    errorExit(status, "validateNumericSettings()", programName, true);
                 break;
             }
 

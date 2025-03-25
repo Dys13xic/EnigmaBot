@@ -20,8 +20,8 @@ except:
     print("ERROR: Unable to open/read token.txt")
     sys.exit(EXIT_FAILURE)
 
-
-client = discord.Client()
+intents = discord.Intents(messages=True, message_content=True)
+client = discord.Client(intents=intents)
 
 
 async def run_program(cmd, messageObject):
